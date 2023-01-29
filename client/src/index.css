@@ -1,0 +1,132 @@
+/* CSS Reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Var */
+:root{
+	--primary: #006826;
+	--dark: #141f18;
+	--dark-alt: #121212;
+	--light: #dfdfdf;
+	--light-alt: #6ba380;
+}
+
+body {
+	background-color: var(--dark);
+	color: var(--light);
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.App {
+	padding: 1rem;
+}
+
+/* Font */
+
+h1 {
+	font-size: calc(30px + 1vw);
+	font-weight: bolder;
+	padding-bottom: 5vh;
+	text-align: center;
+}
+
+h3 {
+	font-size: calc(24px + .8vw);
+	font-weight: 600;
+	color: var(--light-alt);
+	padding-bottom: 5vh;
+	text-transform: uppercase;
+}
+
+p {
+	font-size: calc(18px + 0.5vw);
+}
+
+/* Tasks */
+
+.task {
+	position: relative;
+	background-color: var(--dark-alt);
+	padding: 16px;
+	border-radius: 16px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	margin-bottom: 2vh;
+}
+
+.task:hover {
+	opacity: 0.7;
+}
+
+.task .checkbox {
+	width: 20px;
+	height: 20px;
+	margin-right: 16px;
+	border-radius: 50%;
+	background-color: var(--dark);
+	transition: 0.4s;
+}
+
+.task.is-complete .checkbox {
+	background-color: var(--primary);
+}
+
+.task.is-complete p {
+	text-decoration-line: line-through;
+	text-decoration-thickness: 2px;
+}
+
+.task .delete-task {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 16px;
+	display: flex;
+}
+
+.task .delete-task .delete-icon {
+	height: 36px;
+}
